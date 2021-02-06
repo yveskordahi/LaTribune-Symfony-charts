@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}La Tribune Charts{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('styles/reset.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('styles/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('styles/header.css') }}" />
+        <link rel="stylesheet" href="{{ asset('styles/main.css') }}" />
+        <link rel="stylesheet" href="{{ asset('styles/main-article.css') }}" />
+        {% block stylesheets %}{% endblock %}
+
+    </head>
+    <body>
+
+    <div class="header__before">Section réseaux sociaux | <span class="span__abonnement"> abonnements</span> </div>
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <a href="#" class="logo"><img class="logo__image" src="assets/logo-latribune.png" alt="Logo de la tribune"></a>
+        <nav class="nav">
+        <a class="nav__toggle">
+            <img class="nav__toggle__icon" src="assets/burger_menu.svg" alt="burger_menu">
+        </a>
+          <ul class="nav__wrapper">
+            <li class="nav__item"><a class="nav__item__link" href="#">Économie</a></li>
+            <li class="nav__item"><a class="nav__item__link" href="#">Bourse</a></li>
+            <li class="nav__item"><a class="nav__item__link" href="#">Entreprise & Finance</a></li>
+            <li class="nav__item"><a class="nav__item__link" href="#">Tech</a></li>
+            <li class="nav__item"><a class="nav__item__link" href="#">Vos finances</a></li>
+            <li class="nav__item"><a class="nav__item__link" href="#">Idées</a></li>
+            <li class="nav__item"><a class="nav__item__link" href="#">régions</a></li>
+            <li class="nav__item"><a class="nav__item__link" href="#">carrières</a></li>
+            <li class="nav__item"><a class="nav__item__link" href="#">vidéos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="container__cac_40">Section CAC 40</div>
+
+        {% block body %}{% endblock %}
+        
+        <script src="{{ asset('scripts/header.js') }}"></script>
+        <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+        <script src="{{ asset('scripts/charts.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
